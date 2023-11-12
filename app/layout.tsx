@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Казик :)0)',
-  description: 'hzhz',
+  description: 'casino',
 }
 
 export default function RootLayout({
@@ -18,9 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div>
-          <Sidebar />
-        </div>
         {children}
       </body>
     </html>
