@@ -26,3 +26,12 @@
     color: #fff;
     border: 1px solid #343637;
 }
+
+.card {
+    transition: .15s all ease-in-out;
+}
+
+.card:hover {
+    background-color: #292929;
+    transform: scale(1.15) perspective(1px);
+}
