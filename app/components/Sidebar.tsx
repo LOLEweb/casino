@@ -1,12 +1,15 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import avatar from './../assets/avatar.png'
 import iconDise from './../assets/icon-dise.svg'
 import iconLeave from './../assets/icon-off.svg'
 import Link from 'next/link'
-
-
+// backend file;
+import file_back from './../backend/app.js'
+import hello from './../backend/app.js'
 const Sidebar = () => {
+  
   return (
     <>
     <div className=' bg-[#131313] 2xl sidebar pt-4 pl-6 min-h-full fixed'>
@@ -32,13 +35,14 @@ const Sidebar = () => {
           </Link>
           </li>
           <li className=' py-3'>
-            <a href="#" className='flex gap-4 duration-300 hover:text-[#794DFD]'>
+            <a href="#"  className='flex gap-4 duration-300 hover:text-[#794DFD]' >
             <Image src={iconLeave} alt={'icon'} />
-              Log out
+              <button onClick={hello}>Log out</button> {/*При нажатие на кнопку вызывается функция */}
             </a>
           </li>
         </ul>
       </div>
+  
     </>
   )
 }
