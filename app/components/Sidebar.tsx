@@ -5,11 +5,15 @@ import avatar from './../assets/avatar.png'
 import iconDise from './../assets/icon-dise.svg'
 import iconLeave from './../assets/icon-off.svg'
 import Link from 'next/link'
-// backend file;
+
+// backend files
 import file_back from './../backend/app.js'
-import hello from './../backend/app.js'
+import {signIn, signOut} from 'next-auth/react'
+import {useSession} from "next-auth/react"
+//
+
 const Sidebar = () => {
-  
+  const {status} = useSession();
   return (
     <>
     <div className=' bg-[#131313] 2xl sidebar pt-4 pl-6 min-h-full fixed'>
@@ -37,12 +41,18 @@ const Sidebar = () => {
           <li className=' py-3'>
             <a href="#"  className='flex gap-4 duration-300 hover:text-[#794DFD]' >
             <Image src={iconLeave} alt={'icon'} />
-              <button onClick={hello}>Log out</button> {/*При нажатие на кнопку вызывается функция */}
+              {status === "authenticated" ? ( //Если игрок авторизован, то выводится Log Out, если нет, то Log in
+                <button onClick={() => signOut()}>Log out</button> /*При нажатие на кнопку производится авторизация*/
+              ): (
+                <button onClick={() => signIn('discord')}>Log in</button> /*При нажатие на кнопку вызывается функция */
+              )}
+              
             </a>
           </li>
         </ul>
       </div>
-  
+    
+    
     </>
   )
 }
