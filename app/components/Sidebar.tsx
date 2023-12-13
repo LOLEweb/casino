@@ -43,15 +43,15 @@ const Sidebar = () => {
           </Link>
           </li>
           <li className=' py-3'>
-            <a href="#"  className='flex gap-4 duration-300 hover:text-[#794DFD]' >
+            <a href="#" className=' duration-300 hover:text-[#794DFD]' >
 
               {status === "authenticated" ? ( //Если игрок авторизован, то выводится Log Out, если нет, то Log in
-                <button onClick={() => signOut()}>
+                <button className='flex gap-4' onClick={() => signOut()}>
                   <Image src={iconLeave} alt={'icon'} />
                   <p  className='lg:block hidden'>Log out</p>
                 </button> /*При нажатие на кнопку производится авторизация*/
               ): (
-                <button onClick={() => signIn('discord')}>
+                <button className='flex gap-4' onClick={() => signIn('discord')}>
                   <Image src={iconLeave} alt={'icon'} />
                   <p  className='lg:block hidden'>Log in</p>
                 </button> /*При нажатие на кнопку вызывается функция */
