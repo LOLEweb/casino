@@ -8,6 +8,7 @@
 :root {
     --sidebar-width: 240px;
 }
+
 .sidebar {
     min-width: var(--sidebar-width);
 }
@@ -19,6 +20,7 @@
 .main {
     margin-left: var(--sidebar-width);
 }
+
 
 
 
@@ -40,9 +42,7 @@
 
 .uniq {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 200px;
     grid-row-gap: 64px;
     justify-items: center;
 }
@@ -135,8 +135,12 @@
   transform: scale(0.95);
 }
 
-
-
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 120px;
+  }
+  
+}
 
 
 

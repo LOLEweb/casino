@@ -25,8 +25,8 @@ const Shop = () => {
 
   return (
     <>
-      <main className='main bg-[#0d0d0d] h-screen pt-[200px]'>
-        <div className='uniq'>
+      <main className='main bg-[#0d0d0d] md:h-screen pt-16 2xl:pt-[200px] lg:pb-0 pb-10'>
+        <div className='uniq 2xl:grid-cols-3 md:grid-cols-2'>
         
           <Card iconImg={threads} role={'Locked threads'} price={1488} modalF={() => handleCardClick("Locked threads")} />
           <Card iconImg={guildRole} role={'Custom role'} price={1488} modalF={() => handleCardClick("Custom role")} />
