@@ -14,7 +14,11 @@ import {useSession} from "next-auth/react"
 //
 
 const Sidebar = () => {
+<<<<<<< HEAD
   const {status} = useSession()
+=======
+  const {status} = useSession();
+>>>>>>> 9d1d6c6dd2b20dc61b943d1fbb245242cd4447be
   return (
     <>
     <div className=' bg-[#131313] sidebar pt-4 lg:pl-6 min-h-full fixed lg:block flex flex-col items-center'>
@@ -41,6 +45,7 @@ const Sidebar = () => {
           </li>
           <li className=' py-3'>
             <a href="#"  className='flex gap-4 duration-300 hover:text-[#794DFD]' >
+<<<<<<< HEAD
               {status === "authenticated" ? ( //Если игрок авторизован, то выводится Log Out, если нет, то Log in
                 <button onClick={() => signOut()}>
                   <Image src={iconLeave} alt={'icon'} />
@@ -52,10 +57,21 @@ const Sidebar = () => {
                   <p  className='lg:block hidden'>Log in</p>
                 </button> /*При нажатие на кнопку вызывается функция */
               )}
+=======
+            <Image src={iconLeave} alt={'icon'} />
+              {status === "authenticated" ? ( //Если игрок авторизован, то выводится Log Out, если нет, то Log in
+                <button onClick={() => signOut()}>Log out</button> /*При нажатие на кнопку производится авторизация*/
+              ): (
+                <button onClick={() => signIn('discord')}>Log in</button> /*При нажатие на кнопку вызывается функция */
+              )}
+              
+>>>>>>> 9d1d6c6dd2b20dc61b943d1fbb245242cd4447be
             </a>
           </li>
         </ul>
       </div>
+    
+    
     </>
   )
 }
